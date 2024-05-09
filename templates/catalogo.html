@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Catalogo{% endblock %}
+
+{% block content %}
+
+<h1>Dispositivi disponibili</h1>
+<ul>
+    {% for item in dati %}
+    <li><a href="{% if loggedIn%} {{url_for('dettagli_catalogo', id=item[0])}} {% else %} {{url_for('login')}} {% endif %}">{{item[1]}}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

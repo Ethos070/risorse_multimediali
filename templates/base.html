@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="{{ url_for('static',filename='js/main.js') }}"></script>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <title>{% block title %}{% endblock %} </title>
+</head>
+<body>
+    <ul class="bar">
+        <li class="bar_item"><a href="/">Home</a></li>
+        <li class="bar_item"><a href="/catalogo">Catalogo</a></li>
+        <li class="bar_right bar_item"><a href="/profilo">Profilo</a></li>
+      </ul>
+      <br>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

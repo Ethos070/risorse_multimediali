@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Catalogo{% endblock %}
+
+{% block content %}
+
+<h1>{{dettagli[1]}}</h1>
+<p><b>Categoria:</b> {{dettagli[2]}}</p>
+<p><b>Stato:</b> {{dettagli[3]}}</p>
+<h2>Descrizione:</h2>
+<p>{{dettagli[4]}}</p>
+<button id="prenotazione" onclick="prenota()">Prenota</button>
+
+<div id="box"></div>
+
+{% endblock %}

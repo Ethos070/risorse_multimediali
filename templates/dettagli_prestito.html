@@ -1,0 +1,15 @@
+{% extends "navbar_admin.html" %}
+{% block title %}Dettagli prestito{% endblock %}
+
+{% block content %}
+
+<h1>Informazini prestiti</h1>
+<p><b>Codice prestito:</b> {{prestito[0]}}</p>
+<p><b>Risorsa:</b> {{prestito[1]}}</p>
+<p><b>Utente:</b> {{prestito[2]}}</p>
+<p><b>Data inizio:</b> {{prestito[3]}}</p>
+<p><b>Data fine:</b> {{prestito[4]}}</p>
+<p><b>Stato:</b> {{prestito[5]}}</p>
+<p><b>Note:</b> {{prestito[6]}}</p>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "navbar_admin.html" %}
+{% block title %}Categorie{% endblock %}
+
+{% block content %}
+
+<h1>Elenco categorie</h1>
+<a href="{{url_for('aggiungi_categorie')}}">Aggiungi categoria</a>
+<table border="1">
+    <thead>
+        <th>Categoria</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </thead>
+    {% for categoria in categorie %}
+    <tr>
+        <td>{{categoria[1]}}</td>
+        <td><a href="{{url_for('dettagli_categorie', id_cat=categoria[0])}}">Dettagli</a></td>
+        <td><a href="{{url_for('modifica_categorie', id_cat=categoria[0])}}">Modifica</a></td>
+        <td><a href="{{url_for('elimina_categorie', id_cat=categoria[0])}}">Elimina</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+
+{% endblock %}

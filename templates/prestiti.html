@@ -1,0 +1,33 @@
+{% extends "navbar_admin.html" %}
+{% block title %}Modifica categoria{% endblock %}
+
+{% block content %}
+
+<h1>Elenco prestiti</h1>
+<a href="{{url_for('aggiungi_prestiti')}}">Aggiungi prestito</a>
+<table border="1">
+    <thead>
+        <th>Risorsa</th>
+        <th>Utente</th>
+        <th>Stato</th>
+        <th>Data inizio</th>
+        <th>Data fine</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </thead>
+    {% for prestito in prestiti %}
+    <tr>
+        <td>{{prestito[1]}}</td>
+        <td>{{prestito[2]}}</td>
+        <td>{{prestito[3]}}</td>
+        <td>{{prestito[4]}}</td>
+        <td>{{prestito[5]}}</td>
+        <td><a href="{{url_for('dettagli_prestiti', id_pre=prestito[0])}}">Dettagli</a></td>
+        <td><a href="{{url_for('modifica_prestiti', id_pre=prestito[0])}}">Modifica</a></td>
+        <td><a href="{{url_for('elimina_prestiti', id_pre=prestito[0])}}">Elimina</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

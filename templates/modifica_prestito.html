@@ -1,0 +1,35 @@
+{% extends "navbar_admin.html" %}
+{% block title %}Modifica prestito{% endblock %}
+
+{% block content %}
+
+<h1>Modifica prestito</h1>
+<form action="#" method="post">
+    <label>Risorsa:</label>
+    <select name="id_ris">
+        {% for risorsa in risorse %}
+        <option value="{{risorsa[0]}}" {% if prestito[1] == risorsa[0] %} selected {% endif %}>{{risorsa[1]}}</option>
+        {% endfor %}
+    </select><br>
+    <label>Utente:</label>
+    <select name="id_utente">
+        {% for utente in utenti %}
+        <option value="{{utente[0]}}" {% if prestito[2] == utente[0] %} selected {% endif %}>{{utente[1]}}</option>
+        {% endfor %}
+    </select><br>
+    <label>Stato:</label>
+    <select name="stato">
+        <option value="Prenotato" {% if prestito[5] == 'Prenotato' %}selected{% endif %}>Prenotato</option>
+        <option value="In corso" {% if prestito[5] == 'In corso' %}selected{% endif %}>In corso</option>
+        <option value="Finito" {% if prestito[5] == 'Finito' %}selected{% endif %}>Finito</option>
+    </select><br>
+    <label>Data inizio:</label>
+    <input type="date" name="data_inizio" value="{{prestito[3]}}" required><br>
+    <label>Data fine:</label>
+    <input type="date" name="data_fine" value="{{prestito[4]}}"><br>
+    <label>Note:</label>
+    <textarea rows="7" cols="40" name="note">{{prestito[6]}}</textarea><br>
+    <input type="submit" value="submit">
+</form>
+
+{% endblock %}

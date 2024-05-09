@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Registrazione{% endblock %}
+
+{% block content %}
+
+{% if errore %}
+    <p>{{errore}}</p>
+{% endif %}
+<form action="#" method="post">
+    <label>Email</label>
+    <input type="email" name="email" required/><br>
+    <label>Password</label>
+    <input type="password" name="password" required/><br>
+    <input type="submit" value="submit">
+</form>
+<hr>
+<a href="/registrazione">Non hai un account?</a>
+{% endblock %}

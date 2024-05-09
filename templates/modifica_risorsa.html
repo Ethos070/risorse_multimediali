@@ -1,0 +1,26 @@
+{% extends "navbar_admin.html" %}
+{% block title %}Modifica risorsa{% endblock %}
+
+{% block content %}
+
+<form action="#" method="post">
+    <label>Nome risorsa</label><br>
+    <input type="text" name="nome_ris" value="{{risorsa[1]}}" required/><br>
+    <label>Categoria</label><br>
+    <select name="lista_cat" required>
+        {% for categoria in categorie %}
+            <option value="{{categoria[0]}}" {% if categoria[1] == risorsa[2] %} selected {% endif %}>{{categoria[1]}}</option>
+        {% endfor %}
+    </select><br>
+    <label>Stato</label><br>
+    <select name="lista_stati" required>
+        <option value="Disponibile" {% if risorsa[3] == 'Disponibile' %}selected{% endif %}>Disponibile</option>
+        <option value="In prestito" {% if risorsa[3] == 'In prestito' %}selected{% endif %}>In prestito</option>
+        <option value="Non utilizzabile" {% if risorsa[3] == 'Non utilizzabile' %}selected{% endif %}>Non utilizzabile</option>
+    </select><br>
+    <label>Descrizione</label><br>
+    <textarea rows="7" cols="40" name="descrizione" required>{{risorsa[4]}}</textarea><br>
+    <input type="submit" value="submit">
+</form>
+
+{% endblock %}

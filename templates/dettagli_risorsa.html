@@ -1,0 +1,13 @@
+{% extends "navbar_admin.html" %}
+{% block title %}Dettagli risorsa{% endblock %}
+
+{% block content %}
+
+<h1>Informazini risorsa</h1>
+<p><b>Codice risorsa:</b> {{risorsa[0]}}</p>
+<p><b>Nome:</b> {{risorsa[1]}}</p>
+<p><b>Categoria:</b> {{risorsa[2]}}</p>
+<p><b>Stato:</b> {{risorsa[3]}}</p>
+<p><b>Descrizione:</b> {{risorsa[4]}}</p>
+
+{% endblock %}

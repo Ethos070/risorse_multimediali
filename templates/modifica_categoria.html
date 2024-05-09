@@ -1,0 +1,14 @@
+{% extends "navbar_admin.html" %}
+{% block title %}Modifica categoria{% endblock %}
+
+{% block content %}
+
+<form action="#" method="post">
+    <label>Nome categoria</label><br>
+    <input type="text" name="nome_cat" value="{{categoria[1]}}" required/><br>
+    <label>Descrizione</label><br>
+    <textarea rows="7" cols="40" name="descrizione" required>{{categoria[2]}}</textarea><br>
+    <input type="submit" value="submit">
+</form>
+
+{% endblock %}

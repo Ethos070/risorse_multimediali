@@ -1,0 +1,27 @@
+{% extends "navbar_admin.html" %}
+{% block title %}Risorse{% endblock %}
+
+{% block content %}
+
+<h1>Elenco risorse</h1>
+<a href="/risorse/aggiungi">Inserisci una nuova risorsa</a>
+<table border="1">
+    <tr>
+        <th>Nome</th>
+        <th>Stato</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for risorsa in risorse %}
+    <tr>
+        <td>{{risorsa[1]}}</td>
+        <td>{{risorsa[2]}}</td>
+        <td><a href="{{url_for('dettagli_risorse', id_ris=risorsa[0])}}">Dettagli</a></td>
+        <td><a href="{{url_for('modifica_risorse', id_ris=risorsa[0])}}">Modifica</a></td>
+        <td><a href="{{url_for('elimina_risorse', id_ris=risorsa[0])}}">Elimina</a></td>
+            </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
