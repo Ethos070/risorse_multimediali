@@ -119,7 +119,7 @@ def dettagli_catalogo ():
         
         db = get_db()
         cursor = db.cursor()
-        query = f"INSERT INTO prestiti (IdRisorsa, IdUtente, Data_inizio, stato) VALUES ('{id_ris}', '{session["idusr"]}', '{data_inizio}', 'Prenotato')"
+        query = f"INSERT INTO prestiti (IdRisorsa, IdUtente, Data_inizio, stato) VALUES ('{id_ris}', '{session['idusr']}', '{data_inizio}', 'Prenotato')"
         cursor.execute(query)
         db.commit()
         cursor.execute(f"UPDATE risorse SET Stato = 'In prestito' WHERE Id = '{id_ris}'")
