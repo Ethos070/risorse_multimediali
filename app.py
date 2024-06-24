@@ -11,7 +11,7 @@ def get_db():
         host='mysql-8da69e6-risorse-multimediali.h.aivencloud.com',
         port=18790,
         user='avnadmin',
-        password='AVNS_qCALonn9YzGtGmpcc1y',
+        password='',
         database='Risorse-multimediali',
         charset='utf8mb4',
         connect_timeout=10
